@@ -1,0 +1,51 @@
+/* Component enclosing tag */
+.Contact {
+  padding: 1em;
+  background: #555;
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+
+/* Contact image */
+.Contact .avatar {
+  border-radius: 50%;
+  margin-right: 30px;
+  width: 55px;
+  height: 55px;
+}
+
+/* Name */
+.Contact .name {
+  margin: 0 0 0.25rem;
+  color: #eee;
+}
+
+/* Status text */
+.Contact .status .status-text {
+  color: #999;
+  margin: 0;
+}
+
+/* Status (rounded&colored indicator) */
+.Contact .status .status-online,
+.Contact .status .status-offline {
+  display: flex;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+}
+
+.Contact .status .status-online {
+  background: #aed581;
+}
+
+.Contact .status .status-offline {
+  background: #f4511e;
+}
+
+.text {
+
+    margin-left: 30px;
+}
