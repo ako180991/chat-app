@@ -3,19 +3,34 @@ import './Contact.css';
 
 
 
-function Contact(props) {
+
+class Contact extends React.Component {
+
+  constructor(props) {
+    super(props);
+      this.state = { 
+
+      status : props.status
+     };
+  }
+
+     change = () => {
+       this.setState({status : !this.state.status})
+     }
+
+
+
+  render() {
     return (
       <div className="Contact">
-          <img className="avatar" src={props.avatar} alt={props.name}/>
+          <img onClick = {this.change} className="avatar" src={this.props.avatar} alt={this.props.name}/>
+            <div>
+              <h4  className = "name">{this.props.name}</h4>
+              <p className="status"> {this.state.status ? 
             
-
-          <div>
-            <h4 className = "name">{props.name}</h4>
-            <p className="status">{props.status ? 
-            
-                    <div className='status-online'> 
+                    <div  className='status-online'> 
                     
-                    <div className='text'>
+                    <div onClick = {this.change} className = 'text'>
                     Online  
                     </div>
                     
@@ -24,7 +39,7 @@ function Contact(props) {
 
                     <div className='status-offline'>
                         
-                    <div className= 'text'>
+                    <div onClick = {this.change} className= 'text'>
                     Offline 
                     </div>
                     
@@ -36,5 +51,7 @@ function Contact(props) {
     </div>
     );
   }
+
+}
   
   export default Contact;
